@@ -48,14 +48,14 @@ class BaseDaemon:
             sys.exit(1)
 
         # redirect standard file descriptors
-        sys.stdout.flush()
-        sys.stderr.flush()
-        si = open(self.stdin, 'r')
-        so = open(self.stdout, 'a+')
-        se = open(self.stderr, 'a+')
-        os.dup2(si.fileno(), sys.stdin.fileno())
-        os.dup2(so.fileno(), sys.stdout.fileno())
-        os.dup2(se.fileno(), sys.stderr.fileno())
+        # sys.stdout.flush()
+        # sys.stderr.flush()
+        # si = open(self.stdin, 'r')
+        # so = open(self.stdout, 'a+')
+        # se = open(self.stderr, 'a+')
+        # os.dup2(si.fileno(), sys.stdin.fileno())
+        # os.dup2(so.fileno(), sys.stdout.fileno())
+        # os.dup2(se.fileno(), sys.stderr.fileno())
 
         # write pidfile
         atexit.register(self.delpid)
